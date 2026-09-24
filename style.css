@@ -1,10 +1,14 @@
 /* Variables & Reset */
 :root {
-    --primary: #1B5B6E;       /* Dark teal - màu chủ đạo CRB */
-    --primary-dark: #0d3a47;  /* Teal tối hơn */
-    --accent: #E8711A;        /* Cam CRB */
+    --primary: #1B5B6E;
+    /* Dark teal - màu chủ đạo CRB */
+    --primary-dark: #0d3a47;
+    /* Teal tối hơn */
+    --accent: #E8711A;
+    /* Cam CRB */
     --accent-hover: #cf5e0e;
-    --logo-red: #C8102E;      /* Đỏ logo CRB */
+    --logo-red: #C8102E;
+    /* Đỏ logo CRB */
     --bg-light: #F5F7FA;
     --bg-section: #f9fafb;
     --white: #FFFFFF;
@@ -16,7 +20,7 @@
     --success: #16a34a;
     --star-color: #f59e0b;
     --radius: 8px;
-    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     --font-main: 'Inter', sans-serif;
 }
 
@@ -55,7 +59,7 @@ ul {
 /* Header */
 .header {
     background-color: var(--white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -75,7 +79,8 @@ ul {
 }
 
 .logo-img {
-    height: 44px;
+    height: 70px;
+    /* Phóng to logo desktop */
     width: auto;
     display: block;
 }
@@ -88,7 +93,7 @@ ul {
 }
 
 .footer-logo-img {
-    height: 50px;
+    height: 80px;
     width: auto;
     display: block;
     background: transparent;
@@ -250,7 +255,7 @@ ul {
     cursor: pointer;
     font-size: 18px;
     color: var(--text-gray);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: color 0.2s;
 }
 
@@ -261,12 +266,28 @@ ul {
 
 .watermark-text {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
-    font-style: italic;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    font-weight: 500;
+    bottom: 30px;
+    left: 30px;
+    /* Đưa chữ về bên trái */
+    right: auto;
+    font-family: 'Dancing Script', cursive;
+    /* Đổi font hỗ trợ Tiếng Việt tốt hơn */
+    color: var(--primary-dark);
+    font-size: 26px;
+    /* Chỉnh nhỏ lại */
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    transform: rotate(-8deg);
+}
+
+.watermark-curve {
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    width: 80%;
+    height: 12px;
+    transform: rotate(5deg);
 }
 
 .thumbnail-row {
@@ -358,6 +379,7 @@ ul {
     gap: 6px;
     transition: color 0.2s;
 }
+
 .btn-wishlist-text:hover {
     color: #E53E3E;
 }
@@ -557,9 +579,11 @@ ul {
     margin-bottom: 0;
     transition: background 0.2s;
 }
+
 .btn-ai-try-full .arrow {
     margin-left: auto;
 }
+
 .btn-ai-try-full:hover {
     background: #f0f8ff;
 }
@@ -568,7 +592,8 @@ ul {
 .fitmatch-box {
     border-radius: var(--radius);
     padding: 16px 20px;
-    background: #f0fdfa; /* light teal */
+    background: #f0fdfa;
+    /* light teal */
     position: relative;
     border: 1px solid #e5e7eb;
 }
@@ -595,7 +620,8 @@ ul {
 .crb-logo-text {
     font-weight: 800;
     font-size: 16px;
-    color: #1e3a8a; /* dark blue */
+    color: #1e3a8a;
+    /* dark blue */
     letter-spacing: -0.5px;
 }
 
@@ -660,7 +686,7 @@ ul {
     background-repeat: no-repeat;
     background-position: right 8px top 50%;
     background-size: 10px auto;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .fitmatch-results-area {
@@ -681,8 +707,9 @@ ul {
     background: white;
     padding: 8px 16px;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+
 .fitmatch-match-score i {
     font-size: 24px;
     color: #22c55e;
@@ -702,6 +729,7 @@ ul {
     font-size: 12px;
     font-weight: 500;
 }
+
 .check-item i {
     color: #22c55e;
     font-size: 14px;
@@ -720,7 +748,7 @@ ul {
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 12px;
 }
 
@@ -953,7 +981,7 @@ ul {
     background: white;
     padding: 4px 12px;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Overview Bottom Section */
@@ -1211,7 +1239,7 @@ ul {
 }
 
 .warranty-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .warranty-card h4 {
@@ -1297,7 +1325,7 @@ ul {
     overflow: hidden;
     width: 200px;
     height: 130px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .ai-img-wrapper img {
@@ -1339,7 +1367,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 3;
     color: #0d9488;
     font-size: 18px;
@@ -1387,7 +1415,8 @@ ul {
 
 .similar-title {
     font-size: 20px;
-    color: #1e3a8a; /* Dark Blue */
+    color: #1e3a8a;
+    /* Dark Blue */
     font-weight: 700;
 }
 
@@ -1416,7 +1445,7 @@ ul {
 }
 
 .similar-card-hz:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .similar-img-hz {
@@ -1430,12 +1459,14 @@ ul {
     flex: 1;
 }
 
-.similar-brand-logo, .fallback-logo {
+.similar-brand-logo,
+.fallback-logo {
     display: block;
     height: 18px;
     margin-bottom: 6px;
     font-weight: 800;
-    color: #ef4444; /* Red logo text */
+    color: #ef4444;
+    /* Red logo text */
     font-size: 15px;
     font-family: 'Arial Black', sans-serif;
     letter-spacing: 0.5px;
@@ -1503,7 +1534,7 @@ ul {
 }
 
 .footer-logo-img {
-    height: 48px;
+    height: 80px;
 }
 
 .footer-copyright {
@@ -1646,7 +1677,7 @@ ul {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -1675,7 +1706,7 @@ ul {
     padding: 12px 24px;
     border-radius: 4px;
     font-size: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s, transform 0.3s;
@@ -1688,38 +1719,72 @@ ul {
 
 /* Responsive */
 @media (max-width: 1024px) {
+
     /* Đẩy nút hamburger sang phải, logo bên trái */
-    .header-inner { flex-wrap: wrap; }
-    .logo { order: 1; }
-    .header-actions { order: 2; margin-left: auto; }
-    .mobile-menu-btn { display: block; order: 3; margin-left: 16px; z-index: 103; }
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        order: 3;
+        margin-left: 16px;
+        z-index: 103;
+    }
 
     /* Overlay cho sidebar menu */
     .menu-overlay {
-        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
         z-index: 101;
-        opacity: 0; visibility: hidden;
+        opacity: 0;
+        visibility: hidden;
         transition: opacity 0.3s ease;
     }
-    .menu-overlay.open { opacity: 1; visibility: visible; }
+
+    .menu-overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
 
     /* Ẩn các class mobile trên desktop */
-    .mobile-only { display: flex; }
+    .mobile-only {
+        display: flex;
+    }
 
     /* Sidebar menu từ bên trái bằng thẻ .main-nav */
-    .main-nav { 
-        position: fixed; top: 0; left: -85vw; 
-        width: 85vw; max-width: 320px; height: 100vh; 
-        background: white; 
-        flex-direction: column; 
-        box-shadow: 4px 0 12px rgba(0,0,0,0.1);
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -85vw;
+        width: 85vw;
+        max-width: 320px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
         transition: left 0.3s ease;
         z-index: 102;
         margin: 0;
         display: flex;
     }
-    .main-nav.open { left: 0; }
+
+    .main-nav.open {
+        left: 0;
+    }
 
     .mobile-nav-header {
         display: flex;
@@ -1728,23 +1793,47 @@ ul {
         padding: 20px 24px;
         border-bottom: 1px solid #e5e7eb;
     }
-    .mobile-nav-logo { height: 28px; }
-    .mobile-nav-close { background: none; border: none; font-size: 24px; cursor: pointer; color: #111; }
+
+    .mobile-nav-logo {
+        height: 40px;
+    }
+
+    /* Phóng to logo mobile menu */
+    .mobile-nav-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #111;
+    }
 
     .nav-list {
         display: flex;
         flex-direction: column;
         gap: 0;
         padding: 0 24px;
-        flex: 1; /* Đẩy footer xuống đáy */
+        flex: 1;
+        /* Đẩy footer xuống đáy */
         overflow-y: auto;
     }
-    .nav-item { display: block; padding: 18px 0; border-bottom: 1px solid #f3f4f6; font-size: 16px; font-weight: 600; color: #111; }
+
+    .nav-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        border-bottom: 1px solid #f3f4f6;
+        font-size: 16px;
+        font-weight: 600;
+        color: #111;
+        text-decoration: none;
+    }
 
     .mobile-nav-footer {
         padding: 24px;
         margin-top: auto;
     }
+
     .btn-mobile-consult {
         display: block;
         width: 100%;
@@ -1758,50 +1847,161 @@ ul {
         text-decoration: none;
     }
 
-    .product-hero { flex-direction: column; }
-    .gallery-col { flex: 0 0 100%; width: 100%; }
-    .tab-content.active { flex-direction: column; }
-    .ai-banner { flex-direction: column; text-align: center; }
-    .ai-banner-left, .ai-banner-right { flex: 0 0 auto; width: 100%; justify-content: center; }
-    .ai-watermark { text-align: center; margin-right: 0; }
-    .similar-products { flex-wrap: wrap; }
-    .similar-card { flex: 0 0 calc(50% - 8px); }
-    
+    .product-hero {
+        flex-direction: column;
+    }
+
+    .gallery-col {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .tab-content.active {
+        flex-direction: column;
+    }
+
+    .ai-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ai-banner-left,
+    .ai-banner-right {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ai-watermark {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .similar-products {
+        flex-wrap: wrap;
+    }
+
+    .similar-card {
+        flex: 0 0 calc(50% - 8px);
+    }
+
     /* Khối Overview & FitMatch */
-    .overview-top-section { flex-direction: column; gap: 20px; }
-    .overview-bottom-section { flex-direction: column; gap: 24px; }
-    .fitmatch-layout { flex-direction: column; gap: 16px; }
-    .fitmatch-right { flex: 0 0 auto; width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 16px; }
-    .fitmatch-hint-img { height: auto; max-width: 250px; margin-bottom: 8px; }
+    .overview-top-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .overview-bottom-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .fitmatch-layout {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .fitmatch-right {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 16px;
+    }
+
+    .fitmatch-hint-img {
+        height: auto;
+        max-width: 250px;
+        margin-bottom: 8px;
+    }
 }
 
 @media (max-width: 768px) {
-    .header-actions .search-box, .header-actions .hotline { display: none; }
-    .product-title { font-size: 20px; }
-    .price-main { font-size: 22px; }
-    .trust-badges { gap: 12px; }
-    .trust-item { flex: 0 0 calc(50% - 6px); }
-    .reviews-row { flex-wrap: wrap; gap: 8px; }
-    
-    .action-row { flex-wrap: wrap; height: auto; gap: 12px; }
-    .qty-control, .btn-cart, .btn-consult { height: 48px; }
-    .qty-control { flex: 0 0 110px; }
-    .btn-cart { flex: 1; }
-    .btn-consult { flex: 0 0 100%; }
-    
-    .specs-icons-box { flex-wrap: wrap; justify-content: center; gap: 12px; padding: 12px; }
-    .spec-divider { display: none; }
-    .warranty-cards { flex-direction: column; }
-    
+
+    .header-actions .search-box,
+    .header-actions .hotline {
+        display: none;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .price-main {
+        font-size: 22px;
+    }
+
+    .trust-badges {
+        gap: 12px;
+    }
+
+    .trust-item {
+        flex: 0 0 calc(50% - 6px);
+    }
+
+    .reviews-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .action-row {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 12px;
+    }
+
+    .qty-control,
+    .btn-cart,
+    .btn-consult {
+        height: 48px;
+    }
+
+    .qty-control {
+        flex: 0 0 110px;
+    }
+
+    .btn-cart {
+        flex: 1;
+    }
+
+    .btn-consult {
+        flex: 0 0 100%;
+    }
+
+    .specs-icons-box {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .spec-divider {
+        display: none;
+    }
+
+    .warranty-cards {
+        flex-direction: column;
+    }
+
     /* Sản phẩm tương tự */
-    .similar-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .similar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
     .similar-products {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: 12px;
         scroll-snap-type: x mandatory;
     }
-    .similar-card { flex: 0 0 240px; }
+
+    .similar-card {
+        flex: 0 0 240px;
+    }
+
     .similar-card-hz {
         flex-direction: column;
         flex: 0 0 240px;
@@ -1809,28 +2009,90 @@ ul {
         text-align: center;
         padding: 12px;
     }
-    .similar-img-hz { width: 100%; height: 160px; }
-    .similar-info-hz { display: flex; flex-direction: column; align-items: center; }
-    .price-row-hz { justify-content: center; }
-    
-    .tabs { overflow-x: auto; }
-    .tab-btn { white-space: nowrap; }
-    .footer-inner { flex-direction: column; }
-    .footer-inner-new { flex-direction: column; gap: 24px; }
-    .reviews-summary { flex-direction: column; align-items: stretch; }
-    
+
+    .similar-img-hz {
+        width: 100%;
+        height: 160px;
+    }
+
+    .similar-info-hz {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-row-hz {
+        justify-content: center;
+    }
+
+    .tabs {
+        overflow-x: auto;
+    }
+
+    .tab-btn {
+        white-space: nowrap;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-inner-new {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .reviews-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     /* Thumbnails */
-    .thumbnail-row { gap: 8px; }
-    .thumb-labels { gap: 8px; }
-    .thumb-label { font-size: 10px; }
-    
+    .thumbnail-row {
+        gap: 8px;
+    }
+
+    .thumb-labels {
+        gap: 8px;
+    }
+
+    .thumb-label {
+        font-size: 10px;
+    }
+
     /* AI Banner */
-    .ai-img-wrapper { width: 100%; max-width: 280px; margin: 0 auto; }
-    
+    .ai-img-wrapper {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
     /* Thông số kỹ thuật */
-    .spec-label { flex: 0 0 120px; font-size: 12px; }
-    .spec-value { font-size: 12px; }
-    
+    .spec-label {
+        flex: 0 0 120px;
+        font-size: 12px;
+    }
+
+    .spec-value {
+        font-size: 12px;
+    }
+
     /* FitMatch AI */
-    .fitmatch-results-area { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .fitmatch-results-area {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    /* Watermark text on mobile */
+    .watermark-text {
+        font-size: 18px;
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .watermark-curve {
+        bottom: -10px;
+        height: 10px;
+    }
 }
