@@ -102,39 +102,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navList = document.querySelector('.nav-list');
+    const mainNav = document.querySelector('.main-nav');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
     
-    if (mobileMenuBtn && navList) {
+    // Create overlay for mobile menu
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    const header = document.querySelector('.header');
+    if (header) {
+        header.appendChild(menuOverlay);
+    } else {
+        document.body.appendChild(menuOverlay);
+    }
+
+    if (mobileMenuBtn && mainNav) {
         mobileMenuBtn.addEventListener('click', () => {
             if (window.innerWidth <= 1024) {
-                if (navList.style.display === 'flex') {
-                    navList.style.display = 'none';
-                } else {
-                    navList.style.display = 'flex';
-                    navList.style.flexDirection = 'column';
-                    navList.style.position = 'absolute';
-                    navList.style.top = '72px';
-                    navList.style.left = '0';
-                    navList.style.right = '0';
-                    navList.style.backgroundColor = '#fff';
-                    navList.style.padding = '16px';
-                    navList.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                    navList.style.zIndex = '99';
-                }
+                mainNav.classList.add('open');
+                menuOverlay.classList.add('open');
             }
         });
+        
+        // Close menu when clicking overlay or close button
+        const closeMenu = () => {
+            mainNav.classList.remove('open');
+            menuOverlay.classList.remove('open');
+        };
+
+        menuOverlay.addEventListener('click', closeMenu);
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', closeMenu);
+        }
     }
 
     // Handle resize to reset mobile menu
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024 && navList) {
-            navList.style.display = 'flex';
-            navList.style.flexDirection = 'row';
-            navList.style.position = 'static';
-            navList.style.boxShadow = 'none';
-            navList.style.padding = '0';
-        } else if (navList) {
-            navList.style.display = 'none';
+        if (window.innerWidth > 1024 && mainNav) {
+            mainNav.classList.remove('open');
+            menuOverlay.classList.remove('open');
         }
     });
 
