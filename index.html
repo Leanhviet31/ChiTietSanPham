@@ -66,7 +66,7 @@
         <div class="product-hero">
             <!-- LEFT -->
             <div class="gallery-col">
-                <div class="main-image-wrap">
+                <div class="main-image-wrap" id="main-image-wrap">
                     <span class="badge-sold">Bán chạy</span>
                     <button class="btn-wishlist-detail"><i class="far fa-heart"></i></button>
                     <img id="main-image" src="images/item.png" alt="Chậu rửa bát Konox KN82455U">
@@ -76,18 +76,31 @@
                             <path d="M5,15 Q50,0 95,15" stroke="#f97316" stroke-width="2.5" fill="none" stroke-linecap="round"/>
                         </svg>
                     </div>
+                    <button class="main-nav-arrow main-prev" id="main-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="main-nav-arrow main-next" id="main-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="thumbnail-row">
-                    <img src="images/item.png" alt="Thumb 1" class="thumbnail active" data-src="images/item.png">
-                    <img src="images/GocNghieng.png" alt="Thumb 2" class="thumbnail" data-src="images/GocNghieng.png">
-                    <img src="images/ChiTiet.png" alt="Thumb 3" class="thumbnail" data-src="images/ChiTiet.png">
-                    <img src="images/ThucTe.png" alt="Thumb 4" class="thumbnail" data-src="images/ThucTe.png">
-                </div>
-                <div class="thumb-labels">
-                    <span>Tổng quan</span>
-                    <span>Góc nghiêng</span>
-                    <span>Chi tiết lồng chậu</span>
-                    <span>Hình ảnh thực tế</span>
+                
+                <div class="thumbnail-slider-wrap">
+                    <button class="thumb-nav-arrow thumb-prev" id="thumb-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="thumbnail-row" id="thumbnail-row">
+                        <div class="thumb-item active" data-src="images/item.png" data-index="0">
+                            <img src="images/item.png" alt="Thumb 1">
+                            <span>Tổng quan</span>
+                        </div>
+                        <div class="thumb-item" data-src="images/GocNghieng.png" data-index="1">
+                            <img src="images/GocNghieng.png" alt="Thumb 2">
+                            <span>Góc nghiêng</span>
+                        </div>
+                        <div class="thumb-item" data-src="images/ChiTiet.png" data-index="2">
+                            <img src="images/ChiTiet.png" alt="Thumb 3">
+                            <span>Chi tiết lồng chậu</span>
+                        </div>
+                        <div class="thumb-item" data-src="images/ThucTe.png" data-index="3">
+                            <img src="images/ThucTe.png" alt="Thumb 4">
+                            <span>Hình ảnh thực tế</span>
+                        </div>
+                    </div>
+                    <button class="thumb-nav-arrow thumb-next" id="thumb-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
 
@@ -145,6 +158,11 @@
                     </div>
                 </div>
 
+                <button class="btn-ai-try-full">
+                    <i class="fas fa-camera"></i> Xem thử trên bếp của tôi (AI) <i
+                        class="fas fa-chevron-right arrow"></i>
+                </button>
+
                 <div class="action-row">
                     <div class="qty-control">
                         <button class="qty-btn qty-minus">−</button>
@@ -154,11 +172,6 @@
                     <button class="btn-cart"><i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</button>
                     <button class="btn-consult"><i class="fas fa-headset"></i> Nhận tư vấn</button>
                 </div>
-
-                <button class="btn-ai-try-full">
-                    <i class="fas fa-camera"></i> Xem thử trên bếp của tôi (AI) <i
-                        class="fas fa-chevron-right arrow"></i>
-                </button>
 
                 <!-- CRB FitMatch AI BOX -->
                 <div class="fitmatch-box">

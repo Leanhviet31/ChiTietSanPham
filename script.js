@@ -1,18 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Image gallery
+    // 1. Image gallery (Advanced)
+    const mainImageWrap = document.getElementById('main-image-wrap');
     const mainImage = document.getElementById('main-image');
-    const thumbnails = document.querySelectorAll('.thumbnail');
-
-    thumbnails.forEach(thumb => {
+    const thumbItems = document.querySelectorAll('.thumb-item');
+    const mainPrev = document.getElementById('main-prev');
+    const mainNext = document.getElementById('main-next');
+    const thumbPrev = document.getElementById('thumb-prev');
+    const thumbNext = document.getElementById('thumb-next');
+    const thumbRow = document.getElementById('thumbnail-row');
+    
+    let currentIndex = 0;
+    
+    function updateGallery(index) {
+        if(index < 0) index = thumbItems.length - 1;
+        if(index >= thumbItems.length) index = 0;
+        currentIndex = index;
+        
+        const selectedThumb = thumbItems[currentIndex];
+        if (!selectedThumb) return;
+        mainImage.src = selectedThumb.dataset.src;
+        
+        thumbItems.forEach(t => t.classList.remove('active'));
+        selectedThumb.classList.add('active');
+        
+        if (thumbRow) {
+            const scrollLeft = selectedThumb.offsetLeft - thumbRow.offsetLeft - (thumbRow.clientWidth / 2) + (selectedThumb.clientWidth / 2);
+            thumbRow.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        }
+    }
+    
+    thumbItems.forEach((thumb, idx) => {
         thumb.addEventListener('click', () => {
-            // Update main image src
-            mainImage.src = thumb.dataset.src;
-            
-            // Update active class
-            thumbnails.forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
+            updateGallery(idx);
         });
     });
+    
+    if (mainPrev) mainPrev.addEventListener('click', () => updateGallery(currentIndex - 1));
+    if (mainNext) mainNext.addEventListener('click', () => updateGallery(currentIndex + 1));
+    
+    if (thumbPrev) thumbPrev.addEventListener('click', () => { if (thumbRow) thumbRow.scrollBy({ left: -150, behavior: 'smooth' }); });
+    if (thumbNext) thumbNext.addEventListener('click', () => { if (thumbRow) thumbRow.scrollBy({ left: 150, behavior: 'smooth' }); });
+    
+    // Zoom effect on PC
+    if (mainImageWrap) {
+        mainImageWrap.addEventListener('mousemove', (e) => {
+            if (window.innerWidth <= 768) return; // Only apply on desktop
+            const rect = mainImageWrap.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            mainImage.style.transformOrigin = `${x}% ${y}%`;
+        });
+        mainImageWrap.addEventListener('mouseleave', () => {
+            mainImage.style.transformOrigin = 'center center';
+        });
+    }
+    
+    // Swipe on Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    if (mainImageWrap) {
+        mainImageWrap.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        mainImageWrap.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+    }
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 30) updateGallery(currentIndex + 1);
+        if (touchEndX > touchStartX + 30) updateGallery(currentIndex - 1);
+    }
 
     // 2. Quantity selector
     const qtyMinus = document.querySelector('.qty-minus');
